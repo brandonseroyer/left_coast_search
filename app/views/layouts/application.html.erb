@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LeftCoastSearch</title>
+    <title>Left Coast Search</title>
+    <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <script>
+    $(function() {
+      $('.flash-messages').delay(500).fadeIn('normal')
+    });
+    </script>
+
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to "Left Coast Search", home_index_path %>
+        </div>
+        <div id="nav-right">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href class="nav-text-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Admin
+                <span class="caret">
+                </span>
+              </a>
+              <ul class="dropdown-menu" id="dropdown">
+                <li>
+                  <%= link_to 'Customer Inquiries', contacts_path %>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <%= link_to "Home", root_path, class: "nav-text-color" %>
+            </li>
+            <li>
+              <%= link_to "About", about_index_path, class: "nav-text-color" %>
+            </li>
+            <li>
+              <%= link_to "Employers", employers_path, class: "nav-text-color" %>
+            </li>
+            <li>
+              <%= link_to "Jobs", jobs_path, class: "nav-text-color" %>
+            </li>
+            <li>
+              <%= link_to "News", news_index_path, class: "nav-text-color" %>
+            </li>
+            <li>
+              <%= link_to "Contact", new_contact_path, class: "nav-text-color" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="flash-messages">
+      <% if notice %>
+      <div class="alert alert-success alert-dismissable fade in" role="alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= flash[:notice] %>
+      </div>
+      <% end %>
+    </div>
+
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -12,4 +12,161 @@
  *
  *= require_tree .
  *= require_self
+ *= require social-share-button
+ *= require dropzone/dropzone
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "bootstrap-social";
+ @import "lightbox-bootstrap";
+ @import "font-awesome";
+ @import "social-share-button";
+
+body {
+  padding-top: 120px;
+  height: 100%;
+}
+
+footer {
+  height: 180px;
+  width: 100%;
+  background-color: black;
+  padding: 2%;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-container {
+  text-align: center;
+  padding-left: 5%;
+  color: white;
+}
+
+.footer-list {
+  list-style-type: none;
+}
+
+.footer-text {
+  color: white;
+  text-decoration: none;
+}
+
+.forms {
+  padding: 2%;
+}
+
+.container {
+  margin: 2%;
+  text-align: center;
+  padding-left: 7%;
+}
+
+
+.dropdown-menu li:hover .sub-menu {
+  visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.flash-messages {
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  font-size: 18px;
+  display: none;
+}
+.nav-text-color {
+  color: black;
+}
+
+.navbar-brand {
+  font-weight: bolder;
+}
+
+.navbar {
+  background-color: white;
+  width: 100%;
+  margin-bottom: 0px !important;
+  padding-right: 5%;
+  height: 120px;
+  border-bottom: thin solid #000000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.social {
+  width: 100%;
+  margin: auto;
+}
+
+.social ul {
+  margin: 0;
+  padding: 5px;
+}
+
+.social ul li {
+  margin: 5px;
+  list-style: none outside none;
+  display: inline-block;
+}
+
+.social i {
+  width: 42px;
+  height: 42px;
+  color: #FFF;
+  background-color: #000000;
+  border: 1px solid white;
+  font-size: 22px;
+  text-align:center;
+  padding-top: 12px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+
+.social i:hover {
+  color: #FFF;
+  text-decoration: none;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+
+.social .fa-facebook:hover { /* round facebook icon*/
+  background: #4060A5;
+}
+
+.social .fa-instagram:hover { /* round instagram icon*/
+  background: #375989;
+}
+
+.social .fa-twitter:hover { /* round twitter icon*/
+  background: #00ABE3;
+}
+
+.universal-page {
+  margin: auto;
+  width: 80%;
+  padding: 5%;
+}
+
+#carousel-home,
+#carousel-home .item,
+#carousel-home .item img {
+  width: 100%;
+}
+
+#nav-right {
+  padding-top: 50px;
+}

@@ -3,20 +3,24 @@ class JobsController < ApplicationController
 
   # GET /jobs
   def index
-    @jobs = Job.all
+    @jobs = Job.all.order(created_at: :desc)
   end
 
   # GET /jobs/1
   def show
+    set_job
+    render :show
   end
 
   # GET /jobs/new
   def new
     @job = Job.new
+    render :new
   end
 
   # GET /jobs/1/edit
   def edit
+    set_job
   end
 
   # POST /jobs
@@ -32,6 +36,7 @@ class JobsController < ApplicationController
 
   # PATCH/PUT /jobs/1
   def update
+    @job = set_job
     if @job.update(job_params)
       redirect_to @job, notice: 'Job was successfully updated.'
     else
@@ -41,6 +46,7 @@ class JobsController < ApplicationController
 
   # DELETE /jobs/1
   def destroy
+    @job = set_job
     @job.destroy
     redirect_to jobs_url, notice: 'Job was successfully destroyed.'
   end
@@ -53,6 +59,6 @@ class JobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params[:job]
+      params.require(:job).permit(:title, :location, :job_type, :job_id, :description)
     end
 end

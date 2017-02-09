@@ -1,25 +1,15 @@
-<p id="notice"><%= notice %></p>
+<h1>Customer Inquiries</h1>
 
-<h1>Listing Contacts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Contact', new_contact_path %>
+<% if @contacts.none? %>
+  <%= puts "No Customer Inquiries have been submitted yet" %>
+<% else %>
+  <% @contacts.each do |contact| %>
+    <div class="well">
+      Name: <%= contact.name %>
+      <br>
+      Email: <%= contact.email %>
+      <br>
+      Message: <%= contact.message %>
+    </div>
+  <% end %>
+<% end %>

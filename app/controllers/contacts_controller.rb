@@ -3,20 +3,13 @@ class ContactsController < ApplicationController
 
   # GET /contacts
   def index
-    @contacts = Contact.all
-  end
-
-  # GET /contacts/1
-  def show
+    @contacts = Contact.all.order(created_at: :desc)
   end
 
   # GET /contacts/new
   def new
     @contact = Contact.new
-  end
-
-  # GET /contacts/1/edit
-  def edit
+    render :new
   end
 
   # POST /contacts
@@ -24,25 +17,17 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      redirect_to @contact, notice: 'Contact was successfully created.'
+      redirect_to root_path, notice: 'Your Inquiry was successfully submitted.'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /contacts/1
-  def update
-    if @contact.update(contact_params)
-      redirect_to @contact, notice: 'Contact was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
   # DELETE /contacts/1
   def destroy
+    @contact = set_contact
     @contact.destroy
-    redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+    redirect_to contacts_url
   end
 
   private
@@ -53,6 +38,6 @@ class ContactsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def contact_params
-      params[:contact]
+      params.require(:contact).permit(:name, :email, :message)
     end
 end

@@ -1,17 +1,33 @@
-<%= form_for(@contact) do |f| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+<div id="forms">
+  <br>
+  <%= form_for(@contact) do |f| %>
+    <div>
+      <%= f.label :name %>
+      <br>
+      <%= f.text_field :name, required: 'required' %>
+      <br><br>
+      <%= f.label :email %>
+      <br>
+      <%= f.text_field :email, required: 'required' %>
+      <br><br>
+      <%= f.label :message %>
+      <br>
+      <%= f.cktext_area :message, required: 'required' %>
+    </div>
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-      <ul>
-      <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

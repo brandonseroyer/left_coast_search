@@ -1,18 +1,15 @@
-<p id="notice"><%= notice %></p>
-<%= @job.title %>
-<br>
-<%= @job.location %>
-<br>
-<%= @job.job_type %>
-<br>
-<%= @job.date %>
-<br>
-<%= @job.job_id %>
-<br>
-<%= @job.description %>
-
-<%= link_to "Apply For This Job", new_job_applicant_path(@job), class: "btn btn-primary btn-lg" %>
-
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<div class="universal-page">
+  <b>Title:</b> <%= @job.title %>
+  <br>
+  <b>Location:</b> <%= @job.location %>
+  <br>
+  <b>Type:</b> <%= @job.job_type %>
+  <br>
+  <b>Job ID:</b> <%= @job.job_id %>
+  <br><br>
+  <b>Description:</b> <%= @job.description %>
+  <br><br>
+  <%= link_to "Apply For This Job", new_job_applicant_path(@job), class: "btn btn-primary btn-md" %>
+  <%= link_to "Delete", job_path(@job), class: "btn btn-danger btn-md",
+   method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

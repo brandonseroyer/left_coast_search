@@ -14,29 +14,13 @@
       <br>
       <%= f.text_field :job_type, required: 'required' %>
       <br><br>
-      <%= f.label :id %>
-      <br>
-      <%= f.text_field :job_id, required: 'required' %>
-      <br><br>
       <%= f.label :description %>
       <br>
       <%= f.cktext_area :description, required: 'required' %>
     </div>
     <br>
-    <% if @job.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
-        <ul>
-        <% @job.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <div class="actions">
-      <%= f.submit class: 'btn btn-success btn-md' %>
+      <%= f.submit class: 'btn btn-primary btn-md' %>
     </div>
   <% end %>
 </div>

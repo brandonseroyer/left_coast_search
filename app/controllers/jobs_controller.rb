@@ -28,6 +28,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
+      @job.update(job_id: @job.id)
       redirect_to @job, notice: 'Job was successfully created.'
     else
       render :new
@@ -48,7 +49,7 @@ class JobsController < ApplicationController
   def destroy
     @job = set_job
     @job.destroy
-    redirect_to jobs_url, notice: 'Job was successfully destroyed.'
+    redirect_to root_path, notice: 'Job was successfully destroyed.'
   end
 
   private
@@ -59,6 +60,6 @@ class JobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params.require(:job).permit(:title, :location, :job_type, :job_id, :description)
+      params.require(:job).permit(:title, :location, :job_type, :description)
     end
 end

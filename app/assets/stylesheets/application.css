@@ -82,9 +82,6 @@ footer {
   font-size: 18px;
   display: none;
 }
-.nav-text-color {
-  color: black;
-}
 
 .navbar-brand {
   font-weight: bolder;
@@ -161,14 +158,8 @@ footer {
 
 .universal-page {
   margin: auto;
-  width: 80%;
-  padding: 5%;
-}
-
-#carousel-home,
-#carousel-home .item,
-#carousel-home .item img {
   width: 100%;
+  padding: 3%;
 }
 
 #nav-right {

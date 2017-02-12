@@ -11,5 +11,8 @@
 <br>
 <%= @job.description %>
 
+<%= link_to "Apply For This Job", new_job_applicant_path(@job), class: "btn btn-primary btn-lg" %>
+
+
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

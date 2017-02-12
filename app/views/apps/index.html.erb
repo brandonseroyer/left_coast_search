@@ -1,0 +1,18 @@
+<div>
+  <h1>Job Applications</h1>
+
+  <% @applicants.each do |applicant| %>
+  <div class="well">
+    Name: <%= applicant.first_name %> <%= applicant.last_name %>
+    <br>
+    Email: <%= applicant.email %>
+    <br>
+    Phone: <%= applicant.phone %>
+    <br>
+    About: <%= applicant.about %>
+    <br>
+    Job ID: <%= applicant.job_id %>
+  </div>
+  <br>
+  <% end %>
+</div>

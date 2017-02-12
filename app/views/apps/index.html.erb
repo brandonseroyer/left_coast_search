@@ -3,6 +3,8 @@
 
   <% @applicants.each do |applicant| %>
   <div class="well">
+    Job ID: <%= applicant.job_id %>
+    <br>
     Name: <%= applicant.first_name %> <%= applicant.last_name %>
     <br>
     Email: <%= applicant.email %>
@@ -10,8 +12,6 @@
     Phone: <%= applicant.phone %>
     <br>
     About: <%= applicant.about %>
-    <br>
-    Job ID: <%= applicant.job_id %>
   </div>
   <br>
   <% end %>

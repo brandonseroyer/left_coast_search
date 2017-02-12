@@ -23,13 +23,17 @@
  @import "font-awesome";
  @import "social-share-button";
 
+* {
+ font-family: 'Avenir', arial, sans-serif;
+}
+
 body {
   padding-top: 120px;
   height: 100%;
 }
 
 footer {
-  height: 180px;
+  height: 220px;
   width: 100%;
   background-color: black;
   padding: 2%;

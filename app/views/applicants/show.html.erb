@@ -1,0 +1,11 @@
+<% if @job.applicants.any? %>
+  <% @appicants.each do |applicant| %>
+    <ul>
+    <b><%= applicant.name %></b>
+    <% if current_user %>
+      <%= link_to "Delete", job_applicant_path(@job, applicant),
+      :data => {:confirm => "Are you sure?",
+        :method => "delete"} %>
+    <% end %>
+    </ul>
+  <% end %>

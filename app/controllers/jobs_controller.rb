@@ -8,7 +8,8 @@ class JobsController < ApplicationController
 
   # GET /jobs/1
   def show
-    set_job
+    @job = set_job
+    @applicants = @job.applicants
     render :show
   end
 
@@ -20,7 +21,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
-    set_job
+    @job = set_job
   end
 
   # POST /jobs

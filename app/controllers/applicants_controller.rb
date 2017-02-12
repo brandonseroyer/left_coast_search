@@ -17,10 +17,15 @@ class ApplicantsController < ApplicationController
     end
   end
 
-  def destroy
+  def show
     @job = Job.find(params[:job_id])
+    @applicant = Applicant.find(params[:id])  
+  end
+
+  def destroy
+    @applicant = Applicant.find(params[:id])
     @applicant.destroy
-    redirect_to job_applicants_path, notice: 'Applicant was successfully destroyed.'
+    redirect_to apps_path, notice: 'Applicant was successfully destroyed.'
   end
 
   private

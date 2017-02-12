@@ -2,17 +2,17 @@
   <h1>Job Applications</h1>
   <br>
   <% @applicants.each do |applicant| %>
-  <div class="well">
-    Job ID: <%= applicant.job_id %>
-    <br>
-    Name: <%= applicant.first_name %> <%= applicant.last_name %>
-    <br>
-    Email: <%= applicant.email %>
-    <br>
-    Phone: <%= applicant.phone %>
-    <br>
-    About: <%= applicant.about %>
-  </div>
-  <br>
+    <div class="well">
+      Job ID: <%= applicant.job_id %>
+      <br>
+      Name: <%= applicant.first_name %> <%= applicant.last_name %>
+      <br>
+      Email: <%= applicant.email %>
+      <br>
+      Phone: <%= applicant.phone %>
+      <br>
+      About: <%= applicant.about %>
+      <br>
+    </div>
   <% end %>
 </div>

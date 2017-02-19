@@ -12,7 +12,8 @@
       Phone: <%= applicant.phone %>
       <br>
       About: <%= applicant.about %>
-      <br>
+      <br><br>
+      <%= mail_to "#{applicant.email}", "Email", class: "btn btn-primary btn-md" %>
     </div>
   <% end %>
 </div>

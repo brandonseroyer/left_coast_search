@@ -26,7 +26,8 @@
         <div id="nav-right">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href class="nav-text-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <a href class="navbar-text" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false">
                 Admin
                 <span class="caret">
                 </span>
@@ -44,22 +45,22 @@
               </ul>
             </li>
             <li>
-              <%= link_to "Home", root_path %>
+              <%= link_to "Home", root_path, class: "navbar-text" %>
             </li>
             <li>
-              <%= link_to "About", about_index_path %>
+              <%= link_to "About", about_index_path, class: "navbar-text" %>
             </li>
             <li>
-              <%= link_to "Employers", employers_path %>
+              <%= link_to "Employers", employers_path, class: "navbar-text" %>
             </li>
             <li>
-              <%= link_to "Jobs", jobs_path %>
+              <%= link_to "Jobs", jobs_path, class: "navbar-text" %>
             </li>
             <li>
-              <%= link_to "News", news_index_path %>
+              <%= link_to "News", news_index_path, class: "navbar-text" %>
             </li>
             <li>
-              <%= link_to "Contact", new_contact_path %>
+              <%= link_to "Contact", new_contact_path, class: "navbar-text" %>
             </li>
           </ul>
         </div>

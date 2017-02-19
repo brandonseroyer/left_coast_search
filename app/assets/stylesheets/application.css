@@ -90,9 +90,6 @@ footer {
   padding-right: 5%;
   height: 120px;
   border-bottom: thin solid #000000;
-  font-size: 18px;
-  font-weight: bold;
-  color: gray;
 }
 
 .navbar-brand {
@@ -102,6 +99,12 @@ footer {
 .navbar-header {
   padding-left: 20px;
   padding-top: 20px;
+}
+
+.navbar-text {
+  color: grey;
+  font-size: 20px;
+  margin: 0;
 }
 
 .social {

@@ -83,10 +83,6 @@ footer {
   display: none;
 }
 
-.navbar-brand {
-  font-weight: bolder;
-}
-
 .navbar {
   background-color: white;
   width: 100%;
@@ -96,6 +92,16 @@ footer {
   border-bottom: thin solid #000000;
   font-size: 18px;
   font-weight: bold;
+  color: gray;
+}
+
+.navbar-brand {
+  font-weight: bolder;
+}
+
+.navbar-header {
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 .social {
@@ -160,6 +166,11 @@ footer {
   margin: auto;
   width: 100%;
   padding: 3%;
+}
+
+#job-table {
+  width: 30%;
+
 }
 
 #nav-right {

@@ -1,10 +1,15 @@
 <div class="universal-page">
   <h1>Jobs</h1>
-
-  <% @jobs.each do |job| %>
-    <%= link_to job_path(job) do %>
-      <%= job.title %>
+  <table id="job-table">
+    <tr>
+      <th>Position</th>
+      <th>Location</th>
+    </tr>
+    <tr>
+    <% @jobs.each do |job| %>
+        <td><%= link_to job.title, job_path(job) %></td>
+        <td><%= job.location %></td>
+    </tr>
     <% end %>
-    <br>
-  <% end %>
+  </table>
 </div>

@@ -1,17 +1,23 @@
-<h1>Customer Inquiries</h1>
-
-<% if @contacts.none? %>
-  <%= puts "No Customer Inquiries have been submitted yet" %>
-<% else %>
-  <% @contacts.each do |contact| %>
-    <div class="well">
-      Name: <%= contact.name %>
-      <br>
-      Email: <%= contact.email %>
-      <br>
-      Phone: <%= contact.phone %>
-      <br>
-      Message: <%= contact.message %>
-    </div>
+<div class="universal-page">
+  <h1>Customer Inquiries</h1>
+  <br>
+  <% if @contacts.none? %>
+    <%= puts "No Customer Inquiries have been submitted yet" %>
+  <% else %>
+    <% @contacts.each do |contact| %>
+      <div class="well">
+        Name: <%= contact.name %>
+        <br>
+        Email: <%= contact.email %>
+        <br>
+        Phone: <%= contact.phone %>
+        <br>
+        Message: <%= contact.message %>
+        <br><br>
+        <%= mail_to "#{contact.email}", "Email", class: "btn btn-primary btn-md" %>
+        <%= link_to "Delete", contact_path(contact), class: "btn btn-danger btn-md",
+         method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

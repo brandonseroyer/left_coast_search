@@ -1,15 +1,20 @@
-<div class="universal-page">
-  <h1>Jobs</h1>
-  <table id="job-table">
-    <tr>
-      <th>Position</th>
-      <th>Location</th>
-    </tr>
-    <tr>
-    <% @jobs.each do |job| %>
-        <td><%= link_to job.title, job_path(job) %></td>
-        <td><%= job.location %></td>
-    </tr>
-    <% end %>
-  </table>
+<div id="jobs-index">
+  <%= image_tag("jobs.png") %>
+  <div class="universal-page">
+    <h1>Jobs</h1>
+    <table id="job-table">
+      <tr>
+        <th>Position</th>
+        <th>Location</th>
+        <th>Duration</th>
+      </tr>
+      <tr>
+      <% @jobs.each do |job| %>
+          <td><%= link_to job.title, job_path(job) %></td>
+          <td><%= job.location %></td>
+          <td><%= job.job_type %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

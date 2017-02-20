@@ -175,6 +175,7 @@ footer {
   margin: auto;
   width: 100%;
   padding: 3%;
+  padding-top: 1%;
 }
 
 #home-header img{
@@ -182,7 +183,11 @@ footer {
   width: 100%;
 }
 #job-table {
-  width: 30%;
+  width: 40%;
+}
+
+#jobs-index img{
+  width: 100%;
 }
 
 #nav-right {

@@ -31,13 +31,13 @@ class ContactsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_contact
-      @contact = Contact.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def contact_params
-      params.require(:contact).permit(:name, :email, :phone, :message)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def contact_params
+    params.require(:contact).permit(:name, :email, :phone, :message, :document)
+  end
 end

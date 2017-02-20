@@ -13,6 +13,8 @@
         Phone: <%= contact.phone %>
         <br>
         Message: <%= contact.message %>
+        <br>
+        Resume: <%= link_to "Download", contact.document.url %>
         <br><br>
         <%= mail_to "#{contact.email}", "Email", class: "btn btn-primary btn-md" %>
         <%= link_to "Delete", contact_path(contact), class: "btn btn-danger btn-md",

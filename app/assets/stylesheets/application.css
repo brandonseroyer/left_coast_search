@@ -25,6 +25,8 @@
 
 * {
  font-family: 'Avenir', arial, sans-serif;
+ padding: 0;
+ margin: 0;
 }
 
 body {
@@ -37,6 +39,8 @@ footer {
   width: 100%;
   background-color: black;
   padding: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
   position: relative;
   bottom: 0;
 }
@@ -49,11 +53,13 @@ footer {
 
 .footer-list {
   list-style-type: none;
+  margin: 0;
 }
 
 .footer-text {
   color: white;
-  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .forms {
@@ -171,9 +177,12 @@ footer {
   padding: 3%;
 }
 
+#home-header img{
+  height: 100%;
+  width: 100%;
+}
 #job-table {
   width: 30%;
-
 }
 
 #nav-right {

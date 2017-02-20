@@ -15,7 +15,7 @@ class ApplicantsController < ApplicationController
     @applicant = @job.applicants.new(applicant_params)
 
     if @applicant.save
-      redirect_to root_path, notice: 'Your Job Application Was Successfully Submitted.'
+      redirect_to jobs_path, notice: 'Your Job Application Was Successfully Submitted.'
     else
       render :new
     end
@@ -39,6 +39,6 @@ class ApplicantsController < ApplicationController
     end
 
     def applicant_params
-      params.require(:applicant).permit(:first_name, :last_name, :email, :phone, :about)
+      params.require(:applicant).permit(:first_name, :last_name, :email, :phone, :about, :document)
     end
 end

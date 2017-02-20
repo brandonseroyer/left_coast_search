@@ -10,19 +10,31 @@
   <b>Description:</b> <%= @job.description %>
   <br><br>
   <%= link_to "Apply For This Job", new_job_applicant_path(@job), class: "btn btn-primary btn-md" %>
-  <%= link_to "Delete", job_path(@job), class: "btn btn-danger btn-md",
+  <%= link_to "Delete Job Posting", job_path(@job), class: "btn btn-danger btn-md",
    method: :delete, data: { confirm: 'Are you sure?' } %>
    <br><br>
+   <h3>Submitted Applications</h3>
    <% if @job.applicants.any? %>
       <% @applicants.each do |applicant| %>
-        <ul>
-          Name: <%= applicant.first_name %> <%= applicant.last_name %>
-          <%= link_to "Delete", job_applicant_path(@job, applicant),
-          :data => {:confirm => "Are you sure?",
-            :method => "delete"} %>
-        </ul>
+       <div class="well">
+         Job ID: <%= applicant.job_id %>
+         <br>
+         Name: <%= applicant.first_name %> <%= applicant.last_name %>
+         <br>
+         Email: <%= applicant.email %>
+         <br>
+         Phone: <%= applicant.phone %>
+         <br>
+         About: <%= applicant.about %>
+         <br>
+         Resume: <%= link_to "Download", applicant.document.url %>
+         <br><br>
+         <%= mail_to "#{applicant.email}", "Email", class: "btn btn-primary btn-md" %>
+         <%= link_to "Delete", job_applicant_path(@job, applicant), class: "btn btn-danger btn-md",
+          :data => {:confirm => "Are you sure?", :method => "delete"} %>
+        </div>
       <% end %>
     <% else %>
       <p>There are no applicants for this job yet!</p>
-    <% end %>
+  <% end %>
 </div>

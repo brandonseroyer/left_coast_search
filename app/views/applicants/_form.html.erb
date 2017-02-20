@@ -25,6 +25,11 @@
       <%= f.text_field :about %>
     </div>
     <br>
+    <div class="field">
+      <%= f.label :resume %>
+      <%= f.file_field :document %>
+    </div>
+    <br>
     <div class="actions">
       <%= f.submit "Submit", class: 'btn btn-primary btn-md' %>
     </div>

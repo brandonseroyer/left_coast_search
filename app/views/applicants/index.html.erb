@@ -1,5 +1,5 @@
 <div class="universal-page">
-  <h1>Job Applications</h1>
+  <h1>Job Applicants</h1>
   <br>
   <% @applicants.each do |applicant| %>
     <div class="well">
@@ -13,7 +13,7 @@
       <br>
       About: <%= applicant.about %>
       <br>
-      Resume:
+      Resume: <%= link_to "Download", applicant.document.url %>
       <br><br>
       <%= mail_to "#{applicant.email}", "Email", class: "btn btn-primary btn-md" %>
     </div>

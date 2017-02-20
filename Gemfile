@@ -29,7 +29,7 @@ gem 'dropzonejs-rails'
 gem 'lightbox-bootstrap-rails'
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   gem 'simplecov', require: false
   gem 'capybara'
   gem 'rspec-rails'

@@ -1,6 +1,10 @@
 class ApplicantsController < ApplicationController
   before_action :set_applicant, only: :destroy
 
+  def index
+    @applicants = Applicant.all.order(created_at: :desc)
+  end
+
   def new
     @job = Job.find(params[:job_id])
     @applicant = @job.applicants.new
@@ -19,13 +23,13 @@ class ApplicantsController < ApplicationController
 
   def show
     @job = Job.find(params[:job_id])
-    @applicant = Applicant.find(params[:id])  
+    @applicant = Applicant.find(params[:id])
   end
 
   def destroy
     @applicant = Applicant.find(params[:id])
     @applicant.destroy
-    redirect_to apps_path, notice: 'Applicant was successfully destroyed.'
+    redirect_to job_path(@applicant.job), notice: 'Applicant was successfully destroyed.'
   end
 
   private

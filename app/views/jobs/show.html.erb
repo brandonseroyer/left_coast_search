@@ -12,4 +12,17 @@
   <%= link_to "Apply For This Job", new_job_applicant_path(@job), class: "btn btn-primary btn-md" %>
   <%= link_to "Delete", job_path(@job), class: "btn btn-danger btn-md",
    method: :delete, data: { confirm: 'Are you sure?' } %>
+   <br><br>
+   <% if @job.applicants.any? %>
+      <% @applicants.each do |applicant| %>
+        <ul>
+          Name: <%= applicant.first_name %> <%= applicant.last_name %>
+          <%= link_to "Delete", job_applicant_path(@job, applicant),
+          :data => {:confirm => "Are you sure?",
+            :method => "delete"} %>
+        </ul>
+      <% end %>
+    <% else %>
+      <p>There are no applicants for this job yet!</p>
+    <% end %>
 </div>

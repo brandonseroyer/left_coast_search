@@ -25,6 +25,7 @@
         </div>
         <div id="nav-right">
           <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
             <li class="dropdown">
               <a href class="navbar-text" data-toggle="dropdown" role="button"
                aria-haspopup="true" aria-expanded="false">
@@ -62,6 +63,26 @@
             <li>
               <%= link_to "Contact", new_contact_path, class: "navbar-text" %>
             </li>
+            <% else %>
+            <li>
+              <%= link_to "Home", root_path, class: "navbar-text" %>
+            </li>
+            <li>
+              <%= link_to "About", about_index_path, class: "navbar-text" %>
+            </li>
+            <li>
+              <%= link_to "Employers", employers_path, class: "navbar-text" %>
+            </li>
+            <li>
+              <%= link_to "Jobs", jobs_path, class: "navbar-text" %>
+            </li>
+            <li>
+              <%= link_to "News", news_index_path, class: "navbar-text" %>
+            </li>
+            <li>
+              <%= link_to "Contact", new_contact_path, class: "navbar-text" %>
+            </li>
+            <% end %>
           </ul>
         </div>
       </div>

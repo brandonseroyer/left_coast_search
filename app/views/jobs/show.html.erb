@@ -14,7 +14,9 @@
     <%= link_to "Delete Job Posting", job_path(@job), class: "btn btn-danger btn-md",
      method: :delete, data: { confirm: 'Are you sure?' } %>
      <br><br>
+     <hr>
      <h3>Submitted Applications</h3>
+     <br>
      <% if @job.applicants.any? %>
         <% @applicants.each do |applicant| %>
          <div class="well">

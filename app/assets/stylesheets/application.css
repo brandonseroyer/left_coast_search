@@ -171,6 +171,10 @@ footer {
   background: #00ABE3;
 }
 
+.social .fa-linkedin:hover { /* round twitter icon*/
+  background: #0077b5;
+}
+
 .universal-page {
   margin: auto;
   width: 100%;

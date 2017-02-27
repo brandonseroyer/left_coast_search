@@ -2,7 +2,7 @@
   <h1>Customer Inquiries</h1>
   <br>
   <% if @contacts.none? %>
-    <%= puts "No Customer Inquiries have been submitted yet" %>
+    No Customer Inquiries have been submitted yet
   <% else %>
     <% @contacts.each do |contact| %>
       <div class="well">
@@ -13,8 +13,6 @@
         Phone: <%= contact.phone %>
         <br>
         Message: <%= contact.message %>
-        <br>
-        Resume: <%= link_to "Download", contact.document.url %>
         <br><br>
         <%= mail_to "#{contact.email}", "Email", class: "btn btn-primary btn-md" %>
         <%= link_to "Delete", contact_path(contact), class: "btn btn-danger btn-md",

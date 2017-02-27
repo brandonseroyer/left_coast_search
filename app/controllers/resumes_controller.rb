@@ -1,58 +1,32 @@
 class ResumesController < ApplicationController
-  before_action :set_resume, only: [:show, :edit, :update, :destroy]
 
-  # GET /resumes
   def index
-    @resumes = Resume.all
+    @resumes = Resume.all.order(created_at: :desc)
   end
 
-  # GET /resumes/1
-  def show
-  end
-
-  # GET /resumes/new
   def new
     @resume = Resume.new
   end
 
-  # GET /resumes/1/edit
-  def edit
-  end
-
-  # POST /resumes
   def create
     @resume = Resume.new(resume_params)
 
     if @resume.save
-      redirect_to @resume, notice: 'Resume was successfully created.'
+      redirect_to root_path, notice: 'Your resume was successfully submitted!'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /resumes/1
-  def update
-    if @resume.update(resume_params)
-      redirect_to @resume, notice: 'Resume was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /resumes/1
   def destroy
+    @resume = Resume.find(params[:id])
     @resume.destroy
-    redirect_to resumes_url, notice: 'Resume was successfully destroyed.'
+    redirect_to resumes_path, notice: 'Resume record was successfully destroyed'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_resume
-      @resume = Resume.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def resume_params
-      params[:resume]
-    end
+  def resume_params
+    params.require(:resume).permit(:first_name, :last_name, :email, :phone, :address, :city, :state, :zip, :about, :document)
+  end
 end

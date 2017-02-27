@@ -1,17 +1,50 @@
-<%= form_for(@resume) do |f| %>
-  <% if @resume.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
-
-      <ul>
-      <% @resume.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div id="forms">
+  <br>
+  <%= form_for(@resume) do |f| %>
+    <div>
+      <%= f.label :first_name %>
+      <br>
+      <%= f.text_field :first_name, required: 'required' %>
+      <br><br>
+      <%= f.label :last_name %>
+      <br>
+      <%= f.text_field :last_name, required: 'required' %>
+      <br><br>
+      <%= f.label :email %>
+      <br>
+      <%= f.text_field :email, required: 'required' %>
+      <br><br>
+      <%= f.label :phone %>
+      <br>
+      <%= f.text_field :phone, required: 'required' %>
+      <br><br>
+      <%= f.label :address %>
+      <br>
+      <%= f.text_field :address, required: 'required' %>
+      <br><br>
+      <%= f.label :city %>
+      <br>
+      <%= f.text_field :city, required: 'required' %>
+      <br><br>
+      <%= f.label :state %>
+      <br>
+      <%= f.text_field :state, required: 'required' %>
+      <br><br>
+      <%= f.label :zip %>
+      <br>
+      <%= f.text_field :zip, required: 'required' %>
+      <br><br>
+      <%= f.label :about %> (Tell us about yourself!)
+      <br>
+      <%= f.cktext_area :about %>
+      <br><br>
+      <%= f.label :resume %>
+      <br>
+      <%= f.file_field :document, required: 'required' %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "Submit", class: 'btn btn-primary btn-md' %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,25 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Resumes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="universal-page">
+  <h1>Client Resumes</h1>
+  <br>
+  <% if @resumes.none? %>
+    No resumes have been submitted yet
+  <% else %>
     <% @resumes.each do |resume| %>
-      <tr>
-        <td><%= link_to 'Show', resume %></td>
-        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
-        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="well">
+        Name: <%= resume.first_name %> <%= resume.first_name %>
+        <br>
+        Email: <%= resume.email %>
+        <br>
+        Phone: <%= resume.phone %>
+        <br>
+        Address: <%= resume.address %>
+        <br>
+        City: <%= resume.city %>
+        <br>
+        State: <%= resume.state %>
+        <br>
+        Zip: <%= resume.zip %>
+        <br>
+        About: <%= resume.about %>
+        <br>
+        Resume: <%= link_to "Download", resume.document.url %>
+        <br><br>
+        <%= mail_to "#{resume.email}", "Email", class: "btn btn-primary btn-md" %>
+        <%= link_to "Delete", resume_path(resume), class: "btn btn-danger btn-md",
+         method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Resume', new_resume_path %>
+  <% end %>
+</div>

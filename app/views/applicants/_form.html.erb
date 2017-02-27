@@ -2,32 +2,32 @@
   <%= form_for [@job, @applicant] do |f| %>
     <div class="field">
       <%= f.label :first_name %><br>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, required: 'required' %>
     </div>
     <br>
     <div class="field">
       <%= f.label :last_name %><br>
-      <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, required: 'required' %>
     </div>
     <br>
     <div class="field">
       <%= f.label :email %><br>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, required: 'required' %>
     </div>
     <br>
     <div class="field">
       <%= f.label :phone %><br>
-      <%= f.text_field :phone %>
+      <%= f.text_field :phone, required: 'required' %>
     </div>
     <br>
     <div class="field">
       <%= f.label :about %><br>
-      <%= f.text_field :about %>
+      <%= f.text_field :about, required: 'required' %>
     </div>
     <br>
     <div class="field">
       <%= f.label :resume %>
-      <%= f.file_field :document %>
+      <%= f.file_field :document, required: 'required' %>
     </div>
     <br>
     <div class="actions">

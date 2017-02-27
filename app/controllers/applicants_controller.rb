@@ -1,6 +1,5 @@
 class ApplicantsController < ApplicationController
-  before_action :set_applicant, only: :destroy
-
+  
   def index
     @applicants = Applicant.all.order(created_at: :desc)
   end

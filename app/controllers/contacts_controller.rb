@@ -1,18 +1,15 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
-  # GET /contacts
   def index
     @contacts = Contact.all.order(created_at: :desc)
   end
 
-  # GET /contacts/new
   def new
     @contact = Contact.new
     render :new
   end
 
-  # POST /contacts
   def create
     @contact = Contact.new(contact_params)
 
@@ -23,7 +20,6 @@ class ContactsController < ApplicationController
     end
   end
 
-  # DELETE /contacts/1
   def destroy
     @contact = set_contact
     @contact.destroy
@@ -38,6 +34,6 @@ class ContactsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def contact_params
-    params.require(:contact).permit(:name, :email, :phone, :message, :document)
+    params.require(:contact).permit(:name, :email, :phone, :message)
   end
 end

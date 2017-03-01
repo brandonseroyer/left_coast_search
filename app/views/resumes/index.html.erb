@@ -6,7 +6,7 @@
   <% else %>
     <% @resumes.each do |resume| %>
       <div class="well">
-        Name: <%= resume.first_name %> <%= resume.first_name %>
+        Name: <%= resume.first_name %> <%= resume.last_name %>
         <br>
         Email: <%= resume.email %>
         <br>
@@ -21,13 +21,13 @@
         Zip: <%= resume.zip %>
         <br>
         About: <%= resume.about %>
-        <br>
-        Resume: <%= link_to "Download", resume.document.url %>
         <br><br>
+        <%= link_to "Resume", resume.document.url, class: "btn btn-success btn-md" %>
         <%= mail_to "#{resume.email}", "Email", class: "btn btn-primary btn-md" %>
         <%= link_to "Delete", resume_path(resume), class: "btn btn-danger btn-md",
          method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
   <% end %>
+  <%= paginate @resumes %>
 </div>

@@ -1,8 +1,14 @@
 <div id="jobs-index">
   <%= image_tag("https://s3-us-west-2.amazonaws.com/leftcoastsearch/jobs-header.jpg") %>
+  <div class="carousel-caption">
+    <div id="jobs-header-text">
+      FIND YOUR PATH
+    </div>
+  </div>
   <div class="universal-page">
-    <h1>Jobs</h1>
-    <table id="job-table" class="table-striped">
+    <h1>Available Positions</h1>
+    <br>
+    <table id="jobs-table" class="table-striped">
       <tr>
         <th>Position</th>
         <th>Location</th>
@@ -16,6 +22,7 @@
       </tr>
       <% end %>
     </table>
+    <%= paginate @jobs %>
     <br>
     Not seeing the job you're looking for? <%= link_to "Click here", new_resume_path %> and send us your resume anyway!
   </div>

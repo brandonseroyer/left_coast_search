@@ -1,7 +1,7 @@
 class ApplicantsController < ApplicationController
-  
+
   def index
-    @applicants = Applicant.all.order(created_at: :desc)
+    @applicants = Applicant.all.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new

@@ -1,7 +1,7 @@
 class ResumesController < ApplicationController
 
   def index
-    @resumes = Resume.all.order(created_at: :desc)
+    @resumes = Resume.all.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new

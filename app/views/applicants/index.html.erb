@@ -12,10 +12,10 @@
       Phone: <%= applicant.phone %>
       <br>
       About: <%= applicant.about %>
-      <br>
-      Resume: <%= link_to "Download", applicant.document.url %>
       <br><br>
+      <%= link_to "Resume", applicant.document.url, class: "btn btn-success btn-md" %>
       <%= mail_to "#{applicant.email}", "Email", class: "btn btn-primary btn-md" %>
     </div>
   <% end %>
+  <%= paginate @applicants %>
 </div>

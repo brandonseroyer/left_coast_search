@@ -182,7 +182,7 @@ footer {
   padding-top: 1%;
 }
 
-#carousel-text {
+#home-header-text {
   font-size: 50px;
   font-weight: bold;
   padding-bottom: 14%;
@@ -193,10 +193,15 @@ footer {
   width: 100%;
 }
 
-#job-table {
+#jobs-table {
   width: 40%;
 }
 
+#jobs-header-text {
+  font-size: 72px;
+  font-weight: bold;
+  padding-bottom: 25%;
+}
 #jobs-index img{
   width: 100%;
 }

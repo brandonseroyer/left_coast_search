@@ -88,7 +88,7 @@ span.glyphicon {
 }
 
 .home-tab-text {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: bold;
   padding-bottom: 25%;
   color: white;
@@ -205,13 +205,26 @@ span.glyphicon {
   width: 100%;
 }
 
+#home-tagline {
+  font-size: 24px;
+  font-weight: 500;
+  padding-top: 3%;
+  text-align: center;
+  opacity: 0.9;
+}
+
+#home-tagline2 {
+  font-size: 18px;
+  padding-bottom: 3%;
+  text-align: center;
+  opacity: 0.9;
+}
+
 #index-jobs {
-  border-left: solid black 1px;
   padding: 0px;
 }
 
 #index-resume {
-  border-right: solid black 1px;
   padding: 0px;
 }
 

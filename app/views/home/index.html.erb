@@ -5,13 +5,17 @@
       CONNECTING GREAT COMPANIES<br>WITH GREAT PEOPLE
     </div>
   </div>
-  <div class="container">
+  <div class="container" id="home-tabs">
     <div class="row">
-      <div class="col-md-6">
-        <%= link_to "Send Us Your Resume", new_resume_path %>
+      <div class="col-md-6" id="index-resume">
+        <span class="glyphicon glyphicon-list-alt"></span>
+        <br>
+        <%= link_to "Send Us Your Resume", new_resume_path, class: "home-tab-text" %>
       </div>
-      <div class="col-md-6">
-        <%= link_to "View Jobs", jobs_path %>
+      <div class="col-md-6" id="index-jobs">
+        <span class="glyphicon glyphicon-briefcase"></span>
+        <br>
+        <%= link_to "View Jobs", jobs_path, class: "home-tab-text" %>
       </div>
     </div>
   </div>

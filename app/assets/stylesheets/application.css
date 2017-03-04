@@ -45,6 +45,10 @@ footer {
   bottom: 0;
 }
 
+span.glyphicon {
+    font-size: 1.5em;
+}
+
 .footer-container {
   text-align: center;
   padding-left: 5%;
@@ -87,6 +91,12 @@ footer {
   text-align: center;
   font-size: 18px;
   display: none;
+}
+
+.home-tab-text {
+  color: grey;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .navbar {
@@ -191,6 +201,24 @@ footer {
 #home-header img{
   height: 100%;
   width: 100%;
+}
+
+#home-tabs {
+  margin: 0 auto;
+  height: 150px;
+  width: 100%;
+}
+
+#index-jobs {
+  border-left: solid black 1px;
+  height: 150px;
+  padding-top: 4%;
+}
+
+#index-resume {
+  border-right: solid black 1px;
+  height: 150px;
+  padding-top: 4%;
 }
 
 #jobs-table {

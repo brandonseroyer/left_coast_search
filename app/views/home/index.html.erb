@@ -8,14 +8,26 @@
   <div class="container" id="home-tabs">
     <div class="row">
       <div class="col-md-6" id="index-resume">
-        <span class="glyphicon glyphicon-list-alt"></span>
-        <br>
-        <%= link_to "Send Us Your Resume", new_resume_path, class: "home-tab-text" %>
+        <%= image_tag("https://s3-us-west-2.amazonaws.com/leftcoastsearch/index-jobs.jpg") %>
+        <div class="carousel-caption">
+          <div id="home-header-text">
+            <span class="glyphicon glyphicon-list-alt">
+              <br>
+              <%= link_to "Send Your Resume", new_resume_path, class: "home-tab-text" %>
+            </span>
+          </div>
+        </div>
       </div>
       <div class="col-md-6" id="index-jobs">
-        <span class="glyphicon glyphicon-briefcase"></span>
-        <br>
-        <%= link_to "View Jobs", jobs_path, class: "home-tab-text" %>
+        <%= image_tag("https://s3-us-west-2.amazonaws.com/leftcoastsearch/index-jobs.jpg") %>
+        <div class="carousel-caption">
+          <div id="home-header-text">
+            <span class="glyphicon glyphicon-briefcase">
+              <br>
+              <%= link_to "View Jobs", jobs_path, class: "home-tab-text" %>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

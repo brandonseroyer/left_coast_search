@@ -35,18 +35,21 @@ body {
 }
 
 footer {
-  height: 220px;
+  height: 230px;
   width: 100%;
   background-color: black;
-  padding: 2%;
   padding-left: 5%;
   padding-right: 5%;
   position: relative;
-  bottom: 0;
 }
 
 span.glyphicon {
-    font-size: 1.5em;
+  font-size: 1em;
+  padding-bottom: 60px;
+  line-height: 70%;
+}
+
+.container {
 }
 
 .footer-container {
@@ -70,13 +73,6 @@ span.glyphicon {
   padding: 2%;
 }
 
-.container {
-  margin: 2%;
-  text-align: center;
-  padding-left: 7%;
-}
-
-
 .dropdown-menu li:hover .sub-menu {
   visibility: visible;
 }
@@ -94,9 +90,10 @@ span.glyphicon {
 }
 
 .home-tab-text {
-  color: grey;
-  font-weight: bold;
-  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  font-size: 30px;
+  padding-right: 40px;
 }
 
 .navbar {
@@ -193,9 +190,10 @@ span.glyphicon {
 }
 
 #home-header-text {
-  font-size: 50px;
+  font-size: 48px;
   font-weight: bold;
-  padding-bottom: 14%;
+  padding-bottom: 15%;
+  color: white;
 }
 
 #home-header img{
@@ -205,20 +203,18 @@ span.glyphicon {
 
 #home-tabs {
   margin: 0 auto;
-  height: 150px;
+  height: 300px;
   width: 100%;
 }
 
 #index-jobs {
   border-left: solid black 1px;
-  height: 150px;
-  padding-top: 4%;
+  padding: 0px;
 }
 
 #index-resume {
   border-right: solid black 1px;
-  height: 150px;
-  padding-top: 4%;
+  padding: 0px;
 }
 
 #jobs-table {

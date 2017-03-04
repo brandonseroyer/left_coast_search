@@ -26,7 +26,6 @@
 * {
  font-family: 'Avenir', arial, sans-serif;
  padding: 0;
- margin: 0;
 }
 
 body {
@@ -35,18 +34,17 @@ body {
 }
 
 footer {
-  height: 230px;
+  height: 210px;
   width: 100%;
   background-color: black;
   padding-left: 5%;
   padding-right: 5%;
+  padding-top: 3%;
   position: relative;
 }
 
 span.glyphicon {
   font-size: 1em;
-  padding-bottom: 60px;
-  line-height: 70%;
 }
 
 .container {
@@ -90,10 +88,11 @@ span.glyphicon {
 }
 
 .home-tab-text {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 25%;
   color: white;
-  font-weight: 900;
-  font-size: 30px;
-  padding-right: 40px;
+  line-height: normal;
 }
 
 .navbar {
@@ -203,7 +202,6 @@ span.glyphicon {
 
 #home-tabs {
   margin: 0 auto;
-  height: 300px;
   width: 100%;
 }
 

@@ -186,6 +186,43 @@ span.glyphicon {
   width: 100%;
   padding: 3%;
   padding-top: 1%;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+#about-header img{
+  width: 100%;
+}
+
+#about-page {
+  padding-top: 3%;
+}
+
+#candidate-header img{
+  width: 100%;
+}
+
+#candidate-page {
+  padding-top: 3%;
+}
+
+#candidate-header-text {
+  font-size: 72px;
+  font-weight: bold;
+  padding-bottom: 20%;
+}
+
+#employer-header img{
+  width: 100%;
+}
+
+#employer-header-text {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+#employer-page {
+  padding-top: 3%;
 }
 
 #home-header-text {
@@ -237,6 +274,7 @@ span.glyphicon {
   font-weight: bold;
   padding-bottom: 25%;
 }
+
 #jobs-index img{
   width: 100%;
 }

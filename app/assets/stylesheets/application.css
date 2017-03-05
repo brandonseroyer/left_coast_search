@@ -275,7 +275,7 @@ span.glyphicon {
 }
 
 #jobs-table {
-  width: 40%;
+  width: 75%;
 }
 
 #jobs-header-text {
@@ -290,4 +290,10 @@ span.glyphicon {
 
 #nav-right {
   padding-top: 50px;
+}
+
+#new-contact {
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-right: 25%;
 }

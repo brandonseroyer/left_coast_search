@@ -13,12 +13,18 @@
         <th>Position</th>
         <th>Location</th>
         <th>Duration</th>
+        <% if current_user %>
+        <th>Resumes</th>
+        <% end %>
       </tr>
       <tr>
       <% @jobs.each do |job| %>
           <td><%= link_to job.title, job_path(job) %></td>
           <td><%= job.location %></td>
           <td><%= job.job_type %></td>
+          <% if current_user %>
+          <td><%= job.applicants.count %></td>
+          <% end %>
       </tr>
       <% end %>
     </table>

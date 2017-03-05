@@ -6,7 +6,7 @@
   <br>
   <b>Job ID:</b> <%= @job.job_id %>
   <br><br>
-  <b>Description:</b> <%= @job.description %>
+  <b>Description:</b> <%= simple_format(@job.description) %>
   <br><br>
   <%= link_to "Apply For This Job", new_job_applicant_path(@job), class: "btn btn-primary btn-md" %>
   <% if current_user %>
@@ -19,15 +19,13 @@
      <% if @job.applicants.any? %>
         <% @applicants.each do |applicant| %>
          <div class="well">
-           Job ID: <%= applicant.job_id %>
-           <br>
            Name: <%= applicant.first_name %> <%= applicant.last_name %>
            <br>
            Email: <%= applicant.email %>
            <br>
            Phone: <%= applicant.phone %>
            <br>
-           About: <%= applicant.about %>
+           About: <%= simple_format(applicant.about) %>
            <br><br>
            <%= link_to "Resume", applicant.document.url, class: "btn btn-success btn-md" %>
            <%= mail_to "#{applicant.email}", "Email", class: "btn btn-primary btn-md" %>

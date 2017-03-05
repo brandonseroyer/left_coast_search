@@ -12,7 +12,7 @@
         <br>
         Phone: <%= contact.phone %>
         <br>
-        Message: <%= contact.message %>
+        Message: <%= simple_format(contact.message) %>
         <br><br>
         <%= mail_to "#{contact.email}", "Email", class: "btn btn-primary btn-md" %>
         <%= link_to "Delete", contact_path(contact), class: "btn btn-danger btn-md",

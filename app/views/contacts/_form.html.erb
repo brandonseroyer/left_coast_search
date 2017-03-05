@@ -19,6 +19,8 @@
       <%= f.cktext_area :message, required: 'required' %>
     </div>
     <br>
+    <%= recaptcha_tags %>
+    <br>
     <div class="actions">
       <%= f.submit "Submit", class: 'btn btn-primary btn-md' %>
     </div>

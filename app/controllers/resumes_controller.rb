@@ -11,7 +11,9 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.new(resume_params)
 
-    if @resume.save
+    if verify_recaptcha 
+      @resume.save
+      UserMailer.resume_email.deliver
       redirect_to root_path, notice: 'Your resume was successfully submitted!'
     else
       render :new

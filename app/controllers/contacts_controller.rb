@@ -12,8 +12,9 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-
-    if @contact.save
+    if verify_recaptcha
+      @contact.save
+      UserMailer.contact_email.deliver
       redirect_to root_path, notice: 'Your Inquiry was successfully submitted.'
     else
       render :new

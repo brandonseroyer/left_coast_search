@@ -43,6 +43,8 @@
       <%= f.file_field :document, required: 'required' %>
     </div>
     <br>
+    <%= recaptcha_tags %>
+    <br>
     <div class="actions">
       <%= f.submit "Submit", class: 'btn btn-primary btn-md' %>
     </div>

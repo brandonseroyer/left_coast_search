@@ -209,7 +209,7 @@ span.glyphicon {
 #candidate-header-text {
   font-size: 72px;
   font-weight: bold;
-  padding-bottom: 25%;
+  padding-bottom: 15%;
 }
 
 #employer-header img{
@@ -219,6 +219,7 @@ span.glyphicon {
 #employer-header-text {
   font-size: 72px;
   font-weight: bold;
+  padding-bottom: 22%;
 }
 
 #employer-page {
@@ -228,7 +229,7 @@ span.glyphicon {
 #home-header-text {
   font-size: 48px;
   font-weight: bold;
-  padding-bottom: 15%;
+  padding-bottom: 28%;
   color: white;
 }
 
@@ -270,8 +271,18 @@ span.glyphicon {
   padding: 0px;
 }
 
+#index-jobs img:hover {
+  opacity: .9;
+  background-color: #000;
+}
+
 #index-resume {
   padding: 0px;
+}
+
+#index-resume img:hover {
+  opacity: .9;
+  background-color: #000;
 }
 
 #jobs-table {
@@ -281,7 +292,8 @@ span.glyphicon {
 #jobs-header-text {
   font-size: 72px;
   font-weight: bold;
-  padding-bottom: 25%;
+  padding-bottom: 15%;
+  display: inline-block;
 }
 
 #jobs-index img{

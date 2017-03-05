@@ -209,7 +209,7 @@ span.glyphicon {
 #candidate-header-text {
   font-size: 72px;
   font-weight: bold;
-  padding-bottom: 20%;
+  padding-bottom: 25%;
 }
 
 #employer-header img{
@@ -235,6 +235,15 @@ span.glyphicon {
 #home-header img{
   height: 100%;
   width: 100%;
+}
+
+#homepage img{
+  padding-top: 3%;
+  height: 15%;
+  width: 15%;
+  border: none;
+  display: block;
+  margin: 0 auto;
 }
 
 #home-tabs {

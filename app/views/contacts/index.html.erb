@@ -1,24 +1,27 @@
 <div class="universal-page">
-  <h1>Customer Inquiries</h1>
-  <br>
-  <% if @contacts.none? %>
-    No Customer Inquiries have been submitted yet
-  <% else %>
-    <% @contacts.each do |contact| %>
-      <div class="well">
-        Name: <%= contact.name %>
-        <br>
-        Email: <%= contact.email %>
-        <br>
-        Phone: <%= contact.phone %>
-        <br>
-        Message: <%= simple_format(contact.message) %>
-        <br><br>
-        <%= mail_to "#{contact.email}", "Email", class: "btn btn-primary btn-md" %>
-        <%= link_to "Delete", contact_path(contact), class: "btn btn-danger btn-md",
-         method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+  <% if current_user %>
+    <h1>Customer Inquiries</h1>
+    <br>
+    <% if @contacts.none? %>
+      No Customer Inquiries have been submitted yet
+    <% else %>
+      <% @contacts.each do |contact| %>
+        <div class="well">
+          Name: <%= contact.name %>
+          <br>
+          Email: <%= contact.email %>
+          <br>
+          Phone: <%= contact.phone %>
+          <br>
+          Message: <%= simple_format(contact.message) %>
+          <%= mail_to "#{contact.email}", "Email", class: "btn btn-primary btn-md" %>
+          <%= link_to "Delete", contact_path(contact), class: "btn btn-danger btn-md",
+           method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
     <% end %>
+    <%= paginate @contacts %>
+  <% else %>
+  Access to this page is restricted to Administrators only
   <% end %>
-  <%= paginate @contacts %>
 </div>

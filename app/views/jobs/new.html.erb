@@ -1,4 +1,5 @@
 <div class="universal-page">
+  <% if current_user %>
   <h1>Add New Job Posting</h1>
     <div id="forms">
       <div class="forms">
@@ -6,4 +7,7 @@
       </div>
     </div>
   <br>
+  <% else %>
+  Access to this page is restricted to Administrators only
+  <% end %>
 </div>

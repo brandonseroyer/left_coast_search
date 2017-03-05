@@ -5,16 +5,15 @@
   <b>Duration:</b> <%= @job.job_type %>
   <br>
   <b>Job ID:</b> <%= @job.job_id %>
-  <br><br>
+  <br>
   <b>Description:</b> <%= simple_format(@job.description) %>
-  <br><br>
   <%= link_to "Apply For This Job", new_job_applicant_path(@job), class: "btn btn-primary btn-md" %>
   <% if current_user %>
     <%= link_to "Delete Job Posting", job_path(@job), class: "btn btn-danger btn-md",
      method: :delete, data: { confirm: 'Are you sure?' } %>
      <br><br>
      <hr>
-     <h3>Submitted Applications</h3>
+     <h3>Submitted Applications (<%= @job.applicants.count %>)</h3>
      <br>
      <% if @job.applicants.any? %>
         <% @applicants.each do |applicant| %>
@@ -26,7 +25,6 @@
            Phone: <%= applicant.phone %>
            <br>
            About: <%= simple_format(applicant.about) %>
-           <br><br>
            <%= link_to "Resume", applicant.document.url, class: "btn btn-success btn-md" %>
            <%= mail_to "#{applicant.email}", "Email", class: "btn btn-primary btn-md" %>
            <%= link_to "Delete", job_applicant_path(@job, applicant), class: "btn btn-danger btn-md",

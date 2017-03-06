@@ -10,11 +10,13 @@ class ApplicantsController < ApplicationController
 
   def create
     @job = Job.find(params[:job_id])
-    @applicant = @job.applicants.new(applicant_params)\
+    @applicant = @job.applicants.new(applicant_params)
     if verify_recaptcha
       @applicant.save
       UserMailer.applicant_email.deliver
       redirect_to jobs_path, notice: 'Your Job Application Was Successfully Submitted.'
+    else
+      render :new
     end
   end
 

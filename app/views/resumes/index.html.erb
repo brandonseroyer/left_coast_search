@@ -22,7 +22,6 @@
           Zip: <%= resume.zip %>
           <br>
           About: <%= simple_format(resume.about) %>
-          <br><br>
           <%= link_to "Resume", resume.document.url, class: "btn btn-success btn-md" %>
           <%= mail_to "#{resume.email}", "Email", class: "btn btn-primary btn-md" %>
           <%= link_to "Delete", resume_path(resume), class: "btn btn-danger btn-md",

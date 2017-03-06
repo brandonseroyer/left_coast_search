@@ -15,8 +15,6 @@ class ApplicantsController < ApplicationController
       @applicant.save
       UserMailer.applicant_email.deliver
       redirect_to jobs_path, notice: 'Your Job Application Was Successfully Submitted.'
-    else
-      render :new
     end
   end
 
@@ -36,3 +34,4 @@ class ApplicantsController < ApplicationController
   def applicant_params
     params.require(:applicant).permit(:first_name, :last_name, :email, :phone, :about, :document)
   end
+end

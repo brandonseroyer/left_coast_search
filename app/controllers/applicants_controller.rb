@@ -1,5 +1,4 @@
 class ApplicantsController < ApplicationController
-
   def index
     @applicants = Applicant.all.order(created_at: :desc).page(params[:page]).per(5)
   end
@@ -34,11 +33,7 @@ class ApplicantsController < ApplicationController
 
   private
 
-    def set_applicant
-      @applicant = Applicant.find(params[:id])
-    end
-
-    def applicant_params
-      params.require(:applicant).permit(:first_name, :last_name, :email, :phone, :about, :document)
-    end
+  def applicant_params
+    params.require(:applicant).permit(:first_name, :last_name, :email, :phone, :about, :document)
+  end
 end

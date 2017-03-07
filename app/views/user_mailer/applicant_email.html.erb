@@ -5,12 +5,13 @@
   </head>
   <body>
     <h2>A Job Application Has Been Submitted at leftcoastsearch.com</h2>
-    <br><br>
-    <h3><%= @job.title %></h3>
-    <br>
-    <h3>Job ID: <%= @job.job_id %>
     <p>
-      <%= "Please visit http://leftcoastsearch/jobs/#{@job.job_id} to view." %>
+    Job ID: <%= @job.job_id %>
+    <br>
+    <%= @job.title %>
+    </p>
+    <p>
+      <%= "Please visit http://www.leftcoastsearch.com/jobs/#{@job.job_id} to view." %>
     </p>
   </body>
 </html>

@@ -4,9 +4,13 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>A Job Application Has Been Submitted at leftcoastsearch.com</h1>
+    <h2>A Job Application Has Been Submitted at leftcoastsearch.com</h2>
+    <br><br>
+    <h3><%= @job.title %></h3>
+    <br>
+    <h3>Job ID: <%= @job.job_id %>
     <p>
-      Please visit http://leftcoastsearch/jobs to view.
+      Please visit http://leftcoastsearch/jobs/<%= @job.title %> to view.
     </p>
   </body>
 </html>

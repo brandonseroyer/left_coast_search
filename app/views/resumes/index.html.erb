@@ -1,12 +1,15 @@
 <div class="universal-page">
   <% if current_user %>
-    <h1>Client Resumes</h1>
+    <h1>Candidate Resumes</h1>
+    <hr>
     <br>
     <% if @resumes.none? %>
       No resumes have been submitted yet
     <% else %>
       <% @resumes.each do |resume| %>
         <div class="well">
+          Submitted: <%= resume.created_at.in_time_zone("Pacific Time (US & Canada)") %>
+          <br><br>
           Name: <%= resume.first_name %> <%= resume.last_name %>
           <br>
           Email: <%= resume.email %>
@@ -27,6 +30,7 @@
           <%= link_to "Delete", resume_path(resume), class: "btn btn-danger btn-md",
            method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
+        <br>
       <% end %>
     <% end %>
     <%= paginate @resumes %>

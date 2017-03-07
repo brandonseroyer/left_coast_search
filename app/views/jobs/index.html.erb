@@ -8,7 +8,8 @@
     </div>
   </div>
   <div class="universal-page">
-    <h1>Available Positions</h1>
+    <h1><b>Available Positions</b></h1>
+    <hr>
     <br>
     <table id="jobs-table" class="table-striped">
       <tr>
@@ -31,7 +32,7 @@
       <% end %>
     </table>
     <%= paginate @jobs %>
-    <br>
+    <hr>
     Not seeing the job you're looking for? <%= link_to "Click here", new_resume_path %> and send us your resume anyway!
   </div>
 </div>

@@ -1,12 +1,15 @@
 <div class="universal-page">
   <% if current_user %>
-    <h1>Customer Inquiries</h1>
+    <h1><b>Customer Inquiries</b></h1>
+    <hr>
     <br>
     <% if @contacts.none? %>
       No Customer Inquiries have been submitted yet
     <% else %>
       <% @contacts.each do |contact| %>
         <div class="well">
+          Submitted: <%= contact.created_at.in_time_zone("Pacific Time (US & Canada)") %>
+          <br><br>
           Name: <%= contact.name %>
           <br>
           Email: <%= contact.email %>
@@ -18,6 +21,7 @@
           <%= link_to "Delete", contact_path(contact), class: "btn btn-danger btn-md",
            method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
+        <br>
       <% end %>
     <% end %>
     <%= paginate @contacts %>

@@ -13,7 +13,7 @@ class ApplicantsController < ApplicationController
     @applicant = @job.applicants.new(applicant_params)
     if verify_recaptcha
       @applicant.save
-      UserMailer.applicant_email.deliver
+      UserMailer.applicant_email(@job).deliver
       redirect_to jobs_path, notice: 'Your Job Application Was Successfully Submitted.'
     else
       render :new

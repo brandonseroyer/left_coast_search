@@ -4,14 +4,17 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h2>A Job Application Has Been Submitted at leftcoastsearch.com</h2>
+    <p>This email is to notify you that a job application has been submitted at
+       leftcoastsearch.com</p>
     <p>
+    The application is for the following position:
+    <br><br>
     Job ID: <%= @job.job_id %>
     <br>
-    <%= @job.title %>
+    Job Title: <%= @job.title %>
     </p>
     <p>
-      <%= "Please visit http://www.leftcoastsearch.com/jobs/#{@job.job_id} to view." %>
+      <%= "To view this application, please visit http://www.leftcoastsearch.com/jobs/#{@job.job_id}" %>
     </p>
   </body>
 </html>

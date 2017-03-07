@@ -18,6 +18,8 @@
      <% if @job.applicants.any? %>
         <% @applicants.each do |applicant| %>
          <div class="well">
+           Submitted: <%= applicant.created_at.in_time_zone("Pacific Time (US & Canada)") %>
+           <br><br>
            Name: <%= applicant.first_name %> <%= applicant.last_name %>
            <br>
            Email: <%= applicant.email %>

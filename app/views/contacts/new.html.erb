@@ -1,18 +1,22 @@
 <div class="universal-page">
   <div class="container" id="new-contact">
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-8">
         <h1>Contact Us</h1>
         <%= render 'form' %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <%= image_tag("https://s3-us-west-2.amazonaws.com/leftcoastsearch/logo-med.png") %>
         <br><br>
         PO Box 1025
         <br>
         Lake Oswego, Oregon 97034
         <br>
-        (503) 387-3197
+        Office: (503) 387-3197
+        <br>
+        Cell: (503) 830-4667
+        <br><br>
+        <%= link_to "Send Us Your Resume!", new_resume_path %>
       </div>
     </div>
   </div>

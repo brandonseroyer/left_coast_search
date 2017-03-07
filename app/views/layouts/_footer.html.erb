@@ -1,7 +1,7 @@
 <footer>
   <div id="footer">
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <ul class="footer-list">
           <li>
             <%= link_to "Home", root_path, class: "footer-text" %>
@@ -12,16 +12,14 @@
           <li>
             <%= link_to "Employers", employers_path, class: "footer-text" %>
           </li>
-          <li>
-            <%= link_to "Jobs", jobs_path, class: "footer-text" %>
-          </li>
+
         </ul>
       </div>
       <% unless current_user %>
-      <div class="col-sm-6">
+      <div class="col-sm-3">
         <ul class="footer-list">
           <li>
-            <%= link_to "News", news_index_path, class: "footer-text" %>
+            <%= link_to "Jobs", jobs_path, class: "footer-text" %>
           </li>
           <li>
             <%= link_to "Contact", new_contact_path, class: "footer-text" %>
@@ -32,10 +30,10 @@
         </ul>
       </div>
       <% else %>
-      <div class="col-sm-6">
+      <div class="col-sm-3">
         <ul class="footer-list">
           <li>
-            <%= link_to "News", news_index_path, class: "footer-text" %>
+            <%= link_to "Jobs", jobs_path, class: "footer-text" %>
           </li>
           <li>
             <%= link_to "Contact", new_contact_path, class: "footer-text" %>
@@ -56,10 +54,17 @@
          </ul>
        </div>
       </div>
+      <div class="col-sm-3" id="footer-contact">
+      PO Box 1025
+      <br>
+      Lake Oswego, Oregon 97034
+      <br>
+      (503) 387-3197
+      </div>
      </div>
      <hr>
     <div class="footer-container">
-      Left Coast Search | ©2017 | All Rights Reserved
+      Left Coast Search LLC | ©2017 | All Rights Reserved
     </div>
   </div>
 </footer>

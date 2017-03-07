@@ -1,13 +1,11 @@
-<div class="universal-page">
+<div class="universal-page" id="resume-form">
   <% if current_user %>
-  <h1>Add New Job Posting</h1>
-    <div id="forms">
-      <div class="forms">
-        <%= render 'form' %>
-      </div>
-    </div>
-  <br>
-  <% else %>
-  Access to this page is restricted to Administrators only
-  <% end %>
+  <div class="form-frame">
+    <h1><b>Add New Job Listing</b></h1>
+    <hr>
+    <%= render 'form' %>
+    <% else %>
+    Access to this page is restricted to Administrators only
+    <% end %>
+  </div>
 </div>

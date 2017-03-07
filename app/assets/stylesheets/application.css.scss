@@ -79,12 +79,22 @@ span.glyphicon {
   display: block;
 }
 
+.form-frame {
+  border: 2px solid black;
+  padding: 3%;
+  border-radius: 25px;
+}
+
 .flash-messages {
   padding-left: 5%;
   padding-right: 5%;
   text-align: center;
   font-size: 18px;
   display: none;
+}
+
+.hr-form {
+  border: 1px solid black;
 }
 
 .home-tab-text {
@@ -212,6 +222,11 @@ span.glyphicon {
   padding-bottom: 15%;
 }
 
+#contact-message {
+  width: 75%;
+  height: 150px;
+}
+
 #employer-header img{
   width: 100%;
 }
@@ -224,6 +239,10 @@ span.glyphicon {
 
 #employer-page {
   padding-top: 3%;
+}
+
+#footer-contact {
+  color: white;
 }
 
 #home-header-text {
@@ -308,4 +327,15 @@ span.glyphicon {
   padding-top: 3%;
   padding-left: 5%;
   padding-right: 25%;
+}
+
+#resume-form {
+  padding: 5%;
+}
+#social-header {
+  padding-left: 60%
+}
+
+#speciality-rows {
+  text-align: center;
 }

@@ -50,6 +50,10 @@ span.glyphicon {
 .container {
 }
 
+.carousel-caption {
+  height: 65%;
+}
+
 .footer-container {
   text-align: center;
   padding-left: 5%;
@@ -112,6 +116,11 @@ span.glyphicon {
   padding-right: 5%;
   height: 120px;
   border-bottom: thin solid #000000;
+}
+
+.navbar hr {
+  width: 1000%;
+  margin-left: -500%;
 }
 
 .navbar-brand {
@@ -248,7 +257,6 @@ span.glyphicon {
 #home-header-text {
   font-size: 48px;
   font-weight: bold;
-  padding-bottom: 28%;
   color: white;
 }
 

@@ -10,26 +10,30 @@
   <div class="universal-page">
     <h1><b>Available Positions</b></h1>
     <br>
-    <table id="jobs-table" class="table-striped">
-      <tr>
-        <th>Position</th>
-        <th>Location</th>
-        <th>Duration</th>
+    <% if @jobs.none? %>
+      There are no active job listings at this time.
+    <% else %>
+      <table id="jobs-table" class="table-striped">
+        <tr>
+          <th>Position</th>
+          <th>Location</th>
+          <th>Duration</th>
+          <% if current_user %>
+          <th>Applicants</th>
+          <% end %>
+        </tr>
+        <tr>
+        <% @jobs.each do |job| %>
+        <td><%= link_to job.title, job_path(job) %></td>
+        <td><%= job.location %></td>
+        <td><%= job.job_type %></td>
         <% if current_user %>
-        <th>Applicants</th>
+        <td><%= job.applicants.count %></td>
         <% end %>
       </tr>
-      <tr>
-      <% @jobs.each do |job| %>
-          <td><%= link_to job.title, job_path(job) %></td>
-          <td><%= job.location %></td>
-          <td><%= job.job_type %></td>
-          <% if current_user %>
-          <td><%= job.applicants.count %></td>
-          <% end %>
-      </tr>
       <% end %>
-    </table>
+      </table>
+    <% end %>
     <%= paginate @jobs %>
     <hr>
     Not seeing the job you're looking for? <%= link_to "Click here", new_resume_path %> and send us your resume anyway!

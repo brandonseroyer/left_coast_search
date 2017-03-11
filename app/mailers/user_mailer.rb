@@ -1,7 +1,8 @@
 class UserMailer < ApplicationMailer
   default from: 'leftcoastalerts@gmail.com'
 
-  def applicant_email(job)
+  def applicant_email(job, applicant)
+    @applicant = applicant
     @job = job
     @brandon = 'brandonseroyer@gmail.com'
     mail(to: @brandon, subject: 'A Job Application Has Been Submitted at leftcoastsearch.com')

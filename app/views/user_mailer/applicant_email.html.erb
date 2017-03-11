@@ -11,9 +11,11 @@
     <p>
     The application is for the following position:
     <br><br>
+    Job Title: <%= @job.title %>
+    <br>
     Job ID: <%= @job.job_id %>
     <br>
-    Job Title: <%= @job.title %>
+    Applicant's Name: <%= @applicant.first_name %> <%= @applicant.last_name %>
     </p>
     <p>
       <%= "To view this application, please visit http://www.leftcoastsearch.com/jobs/#{@job.job_id}" %>

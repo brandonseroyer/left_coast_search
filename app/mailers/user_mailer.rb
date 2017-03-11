@@ -4,19 +4,19 @@ class UserMailer < ApplicationMailer
   def applicant_email(job, applicant)
     @applicant = applicant
     @job = job
-    @brandon = 'brandonseroyer@gmail.com'
-    mail(to: @brandon, subject: 'A Job Application Has Been Submitted at leftcoastsearch.com')
+    @blaine = 'blainemoberg@leftcoastsearch.com'
+    mail(to: @blaine, subject: 'A Job Application Has Been Submitted at leftcoastsearch.com')
   end
 
   def resume_email(resume)
     @resume = resume
-    @brandon = 'brandonseroyer@gmail.com'
-    mail(to: @brandon, subject: 'A Resume Has Been Submitted at leftcoastsearch.com')
+    @blaine = 'blainemoberg@leftcoastsearch.com'
+    mail(to: @blaine, subject: 'A Resume Has Been Submitted at leftcoastsearch.com')
   end
 
   def contact_email(contact)
     @contact = contact
-    @brandon = 'brandonseroyer@gmail.com'
-    mail(to: @brandon, subject: 'A Customer Inquiry Has Been Submitted at leftcoastsearch.com')
+    @blaine = 'blainemoberg@leftcoastsearch.com'
+    mail(to: @blaine, subject: 'A Customer Inquiry Has Been Submitted at leftcoastsearch.com')
   end
 end

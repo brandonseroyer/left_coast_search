@@ -14,8 +14,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if verify_recaptcha
       @contact.save
-      UserMailer.contact_email.deliver
-      redirect_to root_path, notice: 'Your Inquiry was successfully submitted.'
+      UserMailer.contact_email(@contact).deliver
+      redirect_to root_path, notice: "Your Inquiry was successfully submitted. We'll be in touch soon!"
     else
       render :new
     end
@@ -24,7 +24,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact = set_contact
     @contact.destroy
-    redirect_to contacts_url
+    redirect_to contacts_url, notice: 'Customer inquiry was successfully destroyed.'
   end
 
   private

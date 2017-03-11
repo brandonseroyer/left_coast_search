@@ -14,7 +14,7 @@ class ApplicantsController < ApplicationController
     if verify_recaptcha
       @applicant.save
       UserMailer.applicant_email(@job, @applicant).deliver
-      redirect_to jobs_path, notice: 'Your Job Application Was Successfully Submitted.'
+      redirect_to jobs_path, notice: 'Your job application was successfully submitted!'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class ApplicantsController < ApplicationController
   def destroy
     @applicant = Applicant.find(params[:id])
     @applicant.destroy
-    redirect_to job_path(@applicant.job), notice: 'Applicant was successfully destroyed.'
+    redirect_to job_path(@applicant.job), notice: 'Job application was successfully destroyed.'
   end
 
   private

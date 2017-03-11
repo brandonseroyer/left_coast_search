@@ -4,7 +4,21 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>A New Custom Inquiry Has Been Sumbitted</h1>
+    Admin,
+    <br>
+    <p>
+      This email is to notify you that a Customer Inquiry has been submitted at
+      leftcoastsearch.com
+    </p>
+    <p>
+      Name: <%= @contact.name %>
+      <br>
+      Email: <%= @contact.email %>
+      <br>
+      Phone: <%= @contact.phone %>
+      <br>
+      Message: <%= simple_format(@contact.message) %>
+    </p>
     <p>
       Please visit http://leftcoastsearch/contacts to view.
     </p>

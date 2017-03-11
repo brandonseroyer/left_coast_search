@@ -30,7 +30,7 @@ class JobsController < ApplicationController
 
     if @job.save
       @job.update(job_id: @job.id)
-      redirect_to @job, notice: 'Job was successfully created.'
+      redirect_to @job, notice: 'Job posting was successfully created.'
     else
       render :new
     end
@@ -40,7 +40,7 @@ class JobsController < ApplicationController
   def update
     @job = set_job
     if @job.update(job_params)
-      redirect_to @job, notice: 'Job was successfully updated.'
+      redirect_to @job, notice: 'Job posting was successfully updated.'
     else
       render :edit
     end
@@ -50,7 +50,7 @@ class JobsController < ApplicationController
   def destroy
     @job = set_job
     @job.destroy
-    redirect_to root_path, notice: 'Job was successfully destroyed.'
+    redirect_to root_path, notice: 'Job posting was successfully destroyed.'
   end
 
   private

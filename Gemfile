@@ -28,6 +28,7 @@ gem 'recaptcha', :require => 'recaptcha/rails'
 gem "paperclip", "~> 4.2"
 gem 'dropzonejs-rails'
 gem 'lightbox-bootstrap-rails'
+gem 'metamagic'
 
 group :development, :test do
   gem 'factory_girl_rails', :require => false

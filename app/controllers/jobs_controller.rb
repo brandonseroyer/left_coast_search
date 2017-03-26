@@ -1,9 +1,11 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
+
 
   # GET /jobs
   def index
-    @jobs = Job.all.order(created_at: :desc).page(params[:page]).per(10)
+    @jobs = Job.order(sort_column + " " + sort_direction).page(params[:page]).per(10)
   end
 
   # GET /jobs/1
@@ -54,13 +56,21 @@ class JobsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job
-      @job = Job.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_job
+    @job = Job.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def job_params
-      params.require(:job).permit(:title, :location, :job_type, :description)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def job_params
+    params.require(:job).permit(:title, :location, :job_type, :description)
+  end
+
+  def sort_column
+    Job.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end

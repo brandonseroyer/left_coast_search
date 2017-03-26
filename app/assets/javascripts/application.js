@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require_tree .
+
+$(function() {
+  $("body").on("click", "#jobs th a",function() {
+    $.getScript(this.href);
+    return false;
+  });
+});

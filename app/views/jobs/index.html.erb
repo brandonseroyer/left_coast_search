@@ -15,31 +15,7 @@ meta title: "Left Coast Search | Available Jobs",
   <div class="universal-page">
     <h1><b>Available Positions</b></h1>
     <br>
-    <% if @jobs.none? %>
-      <i>There are no active job listings at this time.</i>
-    <% else %>
-      <table id="jobs-table" class="table-striped">
-        <tr>
-          <th>Position</th>
-          <th>Location</th>
-          <th>Duration</th>
-          <% if current_user %>
-          <th>Applicants</th>
-          <% end %>
-        </tr>
-        <tr>
-        <% @jobs.each do |job| %>
-        <td><%= link_to job.title, job_path(job) %></td>
-        <td><%= job.location %></td>
-        <td><%= job.job_type %></td>
-        <% if current_user %>
-        <td><%= job.applicants.count %></td>
-        <% end %>
-      </tr>
-      <% end %>
-      </table>
-    <% end %>
-    <%= paginate @jobs %>
+      <div id="jobs"><%= render 'jobs' %></div>
     <hr>
     Not seeing the job you're looking for? <%= link_to "Click here", new_resume_path %> and send us your resume anyway!
   </div>

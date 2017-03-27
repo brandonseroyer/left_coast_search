@@ -1,7 +1,7 @@
 <% if @jobs.none? %>
   <i>There are no active job listings at this time.</i>
 <% else %>
-  <table id="jobs-table">
+  <table id="jobs-table" class="table-striped">
     <tr>
       <th><%= sortable "title", "Position" %></th>
       <th><%= sortable "location" %></th>

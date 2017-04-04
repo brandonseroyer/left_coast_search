@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.6"
+ruby "2.2.2"
 
 git_source(:github) do |repo_name|
   repo_name = "#{left_coast_search}/#{left_coast_search}" unless repo_name.include?("/")
@@ -15,20 +15,17 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'devise'
-gem 'bootstrap-sass', '~> 3.2.0.2'
 gem "font-awesome-rails"
+gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'bootstrap-social-rails'
 gem 'rest-client'
 gem 'aws-sdk', '~> 2.3'
 gem 'aws-sdk-v1'
-gem 'stripe'
 gem 'ckeditor'
 gem 'social-share-button'
 gem 'kaminari'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem "paperclip", "~> 4.2"
-gem 'dropzonejs-rails'
-gem 'lightbox-bootstrap-rails'
 gem 'metamagic'
 
 group :development, :test do

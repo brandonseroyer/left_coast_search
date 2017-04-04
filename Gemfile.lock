@@ -95,8 +95,6 @@ GEM
     dotenv-rails (2.1.2)
       dotenv (= 2.1.2)
       railties (>= 3.2, < 5.1)
-    dropzonejs-rails (0.7.3)
-      rails (> 3.1)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -134,7 +132,6 @@ GEM
     kaminari-core (1.0.1)
     launchy (2.4.3)
       addressable (~> 2.3)
-    lightbox-bootstrap-rails (5.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -248,8 +245,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    stripe (1.58.0)
-      rest-client (>= 1.4, < 4.0)
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.5)
@@ -286,14 +281,12 @@ DEPENDENCIES
   coffee-rails
   devise
   dotenv-rails
-  dropzonejs-rails
   factory_girl_rails
   font-awesome-rails
   jquery-rails
   jquery-turbolinks
   kaminari
   launchy
-  lightbox-bootstrap-rails
   metamagic
   paperclip (~> 4.2)
   pg
@@ -308,10 +301,12 @@ DEPENDENCIES
   shoulda-matchers
   simplecov
   social-share-button
-  stripe
   turbolinks
   uglifier
   web-console (~> 2.0)
+
+RUBY VERSION
+   ruby 2.2.2p95
 
 BUNDLED WITH
    1.14.6

@@ -235,11 +235,8 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-<<<<<<< HEAD
     sitemap_generator (5.3.1)
       builder (~> 3.0)
-=======
->>>>>>> 6fe4b1b8b0cbbb964936641fe26c6643fa968a12
     slop (3.6.0)
     social-share-button (0.8.8)
       coffee-rails
@@ -305,10 +302,7 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers
   simplecov
-<<<<<<< HEAD
   sitemap_generator
-=======
->>>>>>> 6fe4b1b8b0cbbb964936641fe26c6643fa968a12
   social-share-button
   turbolinks
   uglifier

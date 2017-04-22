@@ -19,3 +19,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+config
+config
+config
+db/seeds.rb

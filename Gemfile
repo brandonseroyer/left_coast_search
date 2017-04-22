@@ -27,6 +27,7 @@ gem 'kaminari'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem "paperclip", "~> 4.2"
 gem 'metamagic'
+gem 'sitemap_generator'
 
 group :development, :test do
   gem 'factory_girl_rails', :require => false
